@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FamilyFastFoodSimpleApi.Migrations
 {
     [DbContext(typeof(FamilyFastFoodSimpleApiContext))]
-    [Migration("20230523092514_mssql.local_migration_744")]
-    partial class mssqllocal_migration_744
+    [Migration("20230703172255_mssql.local_migration_185")]
+    partial class mssqllocal_migration_185
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.5")
+                .HasAnnotation("ProductVersion", "7.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -76,6 +76,9 @@ namespace FamilyFastFoodSimpleApi.Migrations
                     b.Property<double?>("Cholesterol")
                         .HasColumnType("float");
 
+                    b.Property<double>("Cost")
+                        .HasColumnType("float");
+
                     b.Property<double?>("DietaryFiber")
                         .HasColumnType("float");
 
@@ -86,7 +89,13 @@ namespace FamilyFastFoodSimpleApi.Migrations
                     b.Property<double?>("Iron")
                         .HasColumnType("float");
 
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Protein")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("Rating")
                         .HasColumnType("float");
 
                     b.Property<double?>("SaturatedFat")
@@ -112,6 +121,15 @@ namespace FamilyFastFoodSimpleApi.Migrations
 
                     b.Property<double?>("VitaminC")
                         .HasColumnType("float");
+
+                    b.Property<double?>("VolumeMl")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("WeightGram")
+                        .HasColumnType("float");
+
+                    b.Property<string>("WhereToGet")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IngredientsID");
 

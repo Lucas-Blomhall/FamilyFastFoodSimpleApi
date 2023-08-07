@@ -4,6 +4,7 @@ using FamilyFastFoodSimpleApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FamilyFastFoodSimpleApi.Migrations
 {
     [DbContext(typeof(FamilyFastFoodSimpleApiContext))]
-    partial class FamilyFastFoodSimpleApiContextModelSnapshot : ModelSnapshot
+    [Migration("20230729192413_AddUserTable")]
+    partial class AddUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,12 +235,6 @@ namespace FamilyFastFoodSimpleApi.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserLoginsId"));
-
-                    b.Property<int?>("UserCaloriesConsumed")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserCaloriesGoal")
-                        .HasColumnType("int");
 
                     b.Property<string>("UserLoginsName")
                         .IsRequired()

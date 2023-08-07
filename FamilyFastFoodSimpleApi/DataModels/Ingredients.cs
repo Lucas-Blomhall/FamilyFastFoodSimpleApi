@@ -9,6 +9,8 @@ namespace FamilyFastFoodSimpleApi.DataModels
         public string IngredientsName { get; set; }
         public double Protein { get; set; }
         public int Calories { get; set; }
+        public double? VolumeMl { get; set; }
+        public double? WeightGram { get; set; }
 
         public double? TotalCarbohydrates { get; set; }
         public double? TotalFat { get; set; }
@@ -22,5 +24,11 @@ namespace FamilyFastFoodSimpleApi.DataModels
         public double? VitaminC { get; set; }
         public double? Calcium { get; set; }
         public double? Iron { get; set; }
+
+        // Nya fält!
+        public double Cost { get; set; } // Hur mycket det kostar i tal och decimal
+        public string? WhereToGet { get; set; } // Namnet på affären som man kan köpa den ifrån
+        public string? Notes { get; set; } // Om ingredienten är för vattning.
+        public double? Rating { get; set; } // assuming a rating scale of 1 to 5, adjust if necessary
     }
 }

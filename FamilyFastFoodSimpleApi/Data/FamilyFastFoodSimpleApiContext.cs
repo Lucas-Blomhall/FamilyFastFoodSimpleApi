@@ -24,5 +24,7 @@ namespace FamilyFastFoodSimpleApi.Data
 
         public DbSet<FamilyFastFoodSimpleApi.DataModels.Categories> Categories { get; set; } = default!;
 
+        public DbSet<FamilyFastFoodSimpleApi.DataModels.UserLogins> UserLogins { get; set; } = default!;
+        
     }
 }

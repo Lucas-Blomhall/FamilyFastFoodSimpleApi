@@ -5,7 +5,7 @@
 namespace FamilyFastFoodSimpleApi.Migrations
 {
     /// <inheritdoc />
-    public partial class mssqllocal_migration_744 : Migration
+    public partial class mssqllocal_migration_185 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,6 +45,8 @@ namespace FamilyFastFoodSimpleApi.Migrations
                     IngredientsName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Protein = table.Column<double>(type: "float", nullable: false),
                     Calories = table.Column<int>(type: "int", nullable: false),
+                    VolumeMl = table.Column<double>(type: "float", nullable: true),
+                    WeightGram = table.Column<double>(type: "float", nullable: true),
                     TotalCarbohydrates = table.Column<double>(type: "float", nullable: true),
                     TotalFat = table.Column<double>(type: "float", nullable: true),
                     SaturatedFat = table.Column<double>(type: "float", nullable: true),
@@ -56,7 +58,11 @@ namespace FamilyFastFoodSimpleApi.Migrations
                     VitaminA = table.Column<double>(type: "float", nullable: true),
                     VitaminC = table.Column<double>(type: "float", nullable: true),
                     Calcium = table.Column<double>(type: "float", nullable: true),
-                    Iron = table.Column<double>(type: "float", nullable: true)
+                    Iron = table.Column<double>(type: "float", nullable: true),
+                    Cost = table.Column<double>(type: "float", nullable: false),
+                    WhereToGet = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Notes = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Rating = table.Column<double>(type: "float", nullable: true)
                 },
                 constraints: table =>
                 {
