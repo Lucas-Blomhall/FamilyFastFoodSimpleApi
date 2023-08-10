@@ -3,7 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 using FamilyFastFoodSimpleApi.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<FamilyFastFoodSimpleApiContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("FamilyFastFoodSimpleApiContext") ?? throw new InvalidOperationException("Connection string 'FamilyFastFoodSimpleApiContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FamilyFastFoodSimpleApiContext"),
+    sqlOptions => sqlOptions.EnableRetryOnFailure()
+   ));
 
 // Add services to the container.
 
